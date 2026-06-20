@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alarm_message">FC elevada\nBusque apoio!</string>
+    <string name="app_name">HeartBPM</string>
+    <string name="permission_instruction">Acesse:\nConfigurar › Apps › HeartBPM\n› Permissões\ne habilite\nSensores Corporais.</string>
+    <string name="permission_title">Permissão\nNecessária</string>
+    <string name="sensor_unavailable">Sensor cardíaco\nnão disponível\nneste dispositivo.</string>
+    <string name="status_alarme">🚨 ALARME!</string>
+    <string name="status_atencao">⚠ ATENÇÃO</string>
+    <string name="status_normal">NORMAL</string>
+    <string name="subtitle_cbpr">Bombeiros PR</string>
+    <string name="unit_bpm">bpm</string>
+    <style name="MainActivityTheme" parent="@android:style/Theme.DeviceDefault"/>
+    <style name="MainActivityTheme.Starting">
+        <item name="android:windowSplashScreenBackground">#CC0000</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+    </style>
+</resources>

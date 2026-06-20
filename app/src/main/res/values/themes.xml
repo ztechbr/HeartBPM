@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema base do app herdado do DeviceDefault do Wear OS -->
+    <style name="MainActivityTheme" parent="@android:style/Theme.DeviceDefault" />
+
+    <!-- Tema da Splash Screen — transparente para transição suave -->
+    <style name="MainActivityTheme.Starting">
+        <item name="android:windowSplashScreenBackground">#CC0000</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+    </style>
+</resources>

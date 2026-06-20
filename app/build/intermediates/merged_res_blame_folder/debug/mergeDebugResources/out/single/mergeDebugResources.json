@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "br.gov.bombeiros.pr.heartbpm.app-debug-46:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "br.gov.bombeiros.pr.heartbpm.app-main-48:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "br.gov.bombeiros.pr.heartbpm.app-debug-46:/xml_backup_rules.xml.flat",
+        "source": "br.gov.bombeiros.pr.heartbpm.app-main-48:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "br.gov.bombeiros.pr.heartbpm.app-debug-46:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "br.gov.bombeiros.pr.heartbpm.app-main-48:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "br.gov.bombeiros.pr.heartbpm.app-debug-46:/drawable_ic_launcher_background.xml.flat",
+        "source": "br.gov.bombeiros.pr.heartbpm.app-main-48:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "br.gov.bombeiros.pr.heartbpm.app-debug-46:/drawable_ic_heart.xml.flat",
+        "source": "br.gov.bombeiros.pr.heartbpm.app-main-48:/drawable/ic_heart.xml"
+    },
+    {
+        "merged": "br.gov.bombeiros.pr.heartbpm.app-debug-46:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "br.gov.bombeiros.pr.heartbpm.app-main-48:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "br.gov.bombeiros.pr.heartbpm.app-debug-46:/drawable_ic_warning.xml.flat",
+        "source": "br.gov.bombeiros.pr.heartbpm.app-main-48:/drawable/ic_warning.xml"
+    }
+]

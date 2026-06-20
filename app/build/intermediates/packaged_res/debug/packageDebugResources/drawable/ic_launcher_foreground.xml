@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Ícone vetorial placeholder — Escudo estilizado do Corpo de Bombeiros do Paraná.
+
+    INSTRUÇÃO: Substitua este arquivo pelo brasão oficial do CBPR (PNG ou SVG)
+    antes de publicar ou distribuir o app internamente.
+    Site oficial: https://www.bombeiros.pr.gov.br
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Escudo base branco -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,8 L92,22 L92,58 C92,78 74,94 54,102 C34,94 16,78 16,58 L16,22 Z" />
+
+    <!-- Interior do escudo vermelho -->
+    <path
+        android:fillColor="#CC0000"
+        android:pathData="M54,16 L84,28 L84,58 C84,74 70,88 54,94 C38,88 24,74 24,58 L24,28 Z" />
+
+    <!-- Chama superior (branca) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28
+                          C52,34 46,40 46,50
+                          C46,57 49.5,62 54,62
+                          C58.5,62 62,57 62,50
+                          C62,40 56,34 54,28 Z" />
+
+    <!-- Chama menor esquerda -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.7"
+        android:pathData="M44,38
+                          C42,43 38,47 38,53
+                          C38,58 41,62 45,62
+                          C43,58 43,54 45,49
+                          C46,45 46,41 44,38 Z" />
+
+    <!-- Chama menor direita -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.7"
+        android:pathData="M64,38
+                          C66,43 70,47 70,53
+                          C70,58 67,62 63,62
+                          C65,58 65,54 63,49
+                          C62,45 62,41 64,38 Z" />
+
+    <!-- Linha base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,72 L72,72 L72,76 L36,76 Z" />
+
+    <!-- Asterisco / estrela de 6 pontas (símbolo CBPR) -->
+    <path
+        android:fillColor="#FFDD00"
+        android:pathData="M54,66 L56,70 L60,70 L57,73 L59,77 L54,74 L49,77 L51,73 L48,70 L52,70 Z" />
+
+</vector>

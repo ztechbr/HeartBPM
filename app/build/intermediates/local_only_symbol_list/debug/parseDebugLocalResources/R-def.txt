@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_heart
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_warning
+mipmap ic_launcher
+mipmap ic_launcher_round
+string alarm_message
+string app_name
+string permission_instruction
+string permission_title
+string sensor_unavailable
+string status_alarme
+string status_atencao
+string status_normal
+string subtitle_cbpr
+string unit_bpm
+style MainActivityTheme
+style MainActivityTheme.Starting
+xml backup_rules
