@@ -14,14 +14,7 @@ import kotlinx.coroutines.flow.callbackFlow
 private const val TAG = "WearHeartRateSensor"
 
 /**
- * Implementação concreta de [HeartRateSensor] usando [SensorManager].
- *
- * Usa [callbackFlow] para converter o callback de hardware em um Flow
- * reativo. O sensor é registrado quando o Flow começa a ser coletado
- * e desregistrado automaticamente ao cancelar (awaitClose).
- *
- * O atributo de contexto "heartRateSensor" é exigido pelo Android
- * para acesso com rastreabilidade de privacidade (API 30+).
+ * Implementação otimizada para baixo consumo de processamento.
  */
 class WearHeartRateSensor(context: Context) : HeartRateSensor {
 
@@ -37,37 +30,36 @@ class WearHeartRateSensor(context: Context) : HeartRateSensor {
 
     override fun observe(): Flow<HeartRateReading> = callbackFlow {
         if (hardwareSensor == null) {
-            Log.e(TAG, "Sensor TYPE_HEART_RATE não encontrado neste dispositivo.")
             close()
             return@callbackFlow
         }
 
         val listener = object : SensorEventListener {
+            private var lastEventTime = 0L
+
             override fun onSensorChanged(event: SensorEvent?) {
+                val currentTime = System.currentTimeMillis()
+                // FILTRO DE HARDWARE: Ignora eventos em intervalos menores que 1.2s
+                if (currentTime - lastEventTime < 1200) return
+                
                 val bpm = event?.values?.firstOrNull()?.toInt() ?: return
-                if (bpm > 0) trySend(HeartRateReading(bpm))
+                if (bpm > 0) {
+                    lastEventTime = currentTime
+                    trySend(HeartRateReading(bpm))
+                }
             }
 
-            override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-                Log.d(TAG, "Acurácia do sensor alterada: $accuracy")
-            }
+            override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
         }
 
-        val registered = sensorManager.registerListener(
+        sensorManager.registerListener(
             listener,
             hardwareSensor,
-            SensorManager.SENSOR_DELAY_NORMAL
+            SensorManager.SENSOR_DELAY_UI // Delay mais amigável para a UI
         )
 
-        if (!registered) {
-            Log.e(TAG, "Falha ao registrar listener do sensor.")
-            close()
-        }
-
-        // Desregistra o listener quando o Flow for cancelado/fechado
         awaitClose {
             sensorManager.unregisterListener(listener)
-            Log.d(TAG, "Listener do sensor desregistrado.")
         }
     }
 }

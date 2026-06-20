@@ -12,11 +12,12 @@ import android.os.VibratorManager
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlin.concurrent.thread
 
 private const val TAG = "AlarmController"
 
 /**
- * Controla o alarme sonoro e tátil do relógio.
+ * Controla o alarme com foco em não bloquear a UI Thread.
  */
 class AlarmController(private val context: Context) {
 
@@ -27,7 +28,7 @@ class AlarmController(private val context: Context) {
     @Volatile
     private var isRunning = false
 
-    /** Inicia sirene sonora + vibração contínua. Move para Default para não travar a UI. */
+    /** Inicia sirene. Move para IO e evita múltiplas instâncias. */
     suspend fun start() = withContext(Dispatchers.Default) {
         if (isRunning) return@withContext
         isRunning = true
@@ -38,46 +39,42 @@ class AlarmController(private val context: Context) {
                 it.startTone(ToneGenerator.TONE_CDMA_HIGH_L)
             }
         }.onFailure {
-            Log.w(TAG, "ToneGenerator falhou, usando RingtoneManager: ${it.message}")
             runCatching {
                 val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
                     ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-                fallbackRingtone = RingtoneManager.getRingtone(context, uri)?.apply {
-                    play()
-                }
+                fallbackRingtone = RingtoneManager.getRingtone(context, uri)?.apply { play() }
             }
         }.getOrNull()
 
-        val pattern = longArrayOf(0L, 500L, 200L)
+        // Vibração simplificada (500ms ligado, 500ms desligado) para economizar CPU
+        val pattern = longArrayOf(0L, 500L, 500L)
         vibrator.vibrate(VibrationEffect.createWaveform(pattern, 0))
     }
 
-    /** Para sirene e vibração de forma síncrona e segura. */
+    /** Para o alarme sem bloquear a thread chamadora. */
     fun stop() {
         if (!isRunning) return
         isRunning = false
         Log.d(TAG, "Alarme PARADO")
-        cleanupResources()
-    }
+        
+        // Para a vibração imediatamente (é rápido)
+        vibrator.cancel()
 
-    /** Libera todos os recursos. Deve ser chamado no onDestroy da Activity. */
-    fun release() {
-        stop()
-    }
-
-    private fun cleanupResources() {
-        toneGenerator?.apply {
-            runCatching { stopTone() }
-            runCatching { release() }
-        }
+        // Libera o ToneGenerator e Ringtone em uma thread separada para não travar a UI
+        val gen = toneGenerator
+        val ring = fallbackRingtone
         toneGenerator = null
-
-        fallbackRingtone?.apply {
-            runCatching { if (isPlaying) stop() }
-        }
         fallbackRingtone = null
 
-        vibrator.cancel()
+        thread(start = true, isDaemon = true) {
+            runCatching { gen?.stopTone() }
+            runCatching { gen?.release() }
+            runCatching { if (ring?.isPlaying == true) ring.stop() }
+        }
+    }
+
+    fun release() {
+        stop()
     }
 
     private fun resolveVibrator(): Vibrator =

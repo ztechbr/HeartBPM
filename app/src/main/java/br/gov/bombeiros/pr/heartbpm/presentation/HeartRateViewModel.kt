@@ -10,21 +10,18 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.conflate
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.sample
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.FlowPreview
 
 /**
  * ViewModel de monitoramento cardíaco.
- *
- * Responsabilidades:
- *  - Controlar o ciclo de vida do sensor via [HeartRateSensor]
- *  - Aplicar a regra de classificação via [ClassifyHeartRateUseCase]
- *  - Expor [HeartRateUiState] imutável para a UI por meio de [StateFlow]
- *  - Refletir eventos de permissão recebidos da [MainActivity]
- *
- * NÃO conhece Context, View, MediaPlayer ou qualquer framework Android —
- * apenas domínio e coroutines.
  */
+@OptIn(FlowPreview::class)
 class HeartRateViewModel(
     private val sensor: HeartRateSensor,
     private val classify: ClassifyHeartRateUseCase = ClassifyHeartRateUseCase()
@@ -58,9 +55,10 @@ class HeartRateViewModel(
 
         observeJob = viewModelScope.launch {
             sensor.observe()
+                .conflate() 
+                .sample(3000) // ATUALIZAÇÃO A CADA 3 SEGUNDOS: Alivia muito o processamento
+                .distinctUntilChanged { old, new -> old.bpm == new.bpm }
                 .catch { e ->
-                    // Sensor pode lançar exceção se não disponível;
-                    // a UI continuará exibindo "--" até nova leitura.
                     _uiState.update { it.copy(sensorAvailable = false) }
                 }
                 .collect { reading ->
