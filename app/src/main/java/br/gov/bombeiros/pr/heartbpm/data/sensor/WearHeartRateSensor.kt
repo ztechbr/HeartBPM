@@ -19,7 +19,6 @@ private const val TAG = "WearHeartRateSensor"
 class WearHeartRateSensor(context: Context) : HeartRateSensor {
 
     private val sensorManager: SensorManager = context
-        .createAttributionContext("heartRateSensor")
         .getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
     private val hardwareSensor: Sensor? =

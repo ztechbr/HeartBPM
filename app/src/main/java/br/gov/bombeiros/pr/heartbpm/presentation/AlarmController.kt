@@ -12,70 +12,116 @@ import android.os.VibratorManager
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import kotlin.concurrent.thread
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 private const val TAG = "AlarmController"
 
 /**
- * Controla o alarme com foco em não bloquear a UI Thread.
+ * Controla o alarme com foco em estabilidade e não bloqueio da UI Thread.
  */
 class AlarmController(private val context: Context) {
 
     private var toneGenerator: ToneGenerator? = null
     private var fallbackRingtone: Ringtone? = null
     private val vibrator: Vibrator by lazy { resolveVibrator() }
+    
+    private val mutex = Mutex()
+    private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
     @Volatile
     private var isRunning = false
 
-    /** Inicia sirene. Move para IO e evita múltiplas instâncias. */
-    suspend fun start() = withContext(Dispatchers.Default) {
-        if (isRunning) return@withContext
+    /** Inicia sirene. Usa Mutex para evitar condições de corrida. */
+    suspend fun start() = mutex.withLock {
+        if (isRunning) return@withLock
+        
         isRunning = true
         Log.d(TAG, "Alarme INICIADO")
 
-        toneGenerator = runCatching {
-            ToneGenerator(AudioManager.STREAM_ALARM, ToneGenerator.MAX_VOLUME).also {
-                it.startTone(ToneGenerator.TONE_CDMA_HIGH_L)
+        withContext(Dispatchers.Default) {
+            val gen = toneGenerator ?: runCatching {
+                ToneGenerator(AudioManager.STREAM_ALARM, ToneGenerator.MAX_VOLUME)
+            }.getOrNull()
+            
+            toneGenerator = gen
+
+            if (gen != null) {
+                val started = runCatching { 
+                    gen.startTone(ToneGenerator.TONE_CDMA_HIGH_L)
+                    true
+                }.getOrDefault(false)
+                
+                if (!started) {
+                    Log.e(TAG, "Falha ao iniciar tom no ToneGenerator")
+                    playFallbackRingtone()
+                }
+            } else {
+                Log.e(TAG, "ToneGenerator é nulo, usando fallback")
+                playFallbackRingtone()
             }
-        }.onFailure {
+
+            // Vibração simplificada
             runCatching {
-                val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-                    ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-                fallbackRingtone = RingtoneManager.getRingtone(context, uri)?.apply { play() }
+                val pattern = longArrayOf(0L, 500L, 500L)
+                vibrator.vibrate(VibrationEffect.createWaveform(pattern, 0))
             }
-        }.getOrNull()
-
-        // Vibração simplificada (500ms ligado, 500ms desligado) para economizar CPU
-        val pattern = longArrayOf(0L, 500L, 500L)
-        vibrator.vibrate(VibrationEffect.createWaveform(pattern, 0))
-    }
-
-    /** Para o alarme sem bloquear a thread chamadora. */
-    fun stop() {
-        if (!isRunning) return
-        isRunning = false
-        Log.d(TAG, "Alarme PARADO")
-        
-        // Para a vibração imediatamente (é rápido)
-        vibrator.cancel()
-
-        // Libera o ToneGenerator e Ringtone em uma thread separada para não travar a UI
-        val gen = toneGenerator
-        val ring = fallbackRingtone
-        toneGenerator = null
-        fallbackRingtone = null
-
-        thread(start = true, isDaemon = true) {
-            runCatching { gen?.stopTone() }
-            runCatching { gen?.release() }
-            runCatching { if (ring?.isPlaying == true) ring.stop() }
         }
     }
 
-    fun release() {
-        stop()
+    private fun playFallbackRingtone() {
+        if (fallbackRingtone == null) {
+            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+            fallbackRingtone = RingtoneManager.getRingtone(context, uri)
+        }
+        runCatching { if (fallbackRingtone?.isPlaying == false) fallbackRingtone?.play() }
     }
+
+    /** Para o alarme de forma segura. */
+    suspend fun stop() = mutex.withLock {
+        if (!isRunning) return@withLock
+        isRunning = false
+        Log.d(TAG, "Alarme PARADO")
+        
+        runCatching { vibrator.cancel() }
+
+        withContext(Dispatchers.Default) {
+            runCatching { toneGenerator?.stopTone() }
+            runCatching { if (fallbackRingtone?.isPlaying == true) fallbackRingtone?.stop() }
+        }
+    }
+
+    /** Libera recursos permanentemente. */
+    fun release() {
+        isRunning = false
+        // Lançamos no GlobalScope ou em um escopo que não seja cancelado imediatamente
+        // para garantir que o cleanup ocorra mesmo se o componente que chamou for destruído.
+        // Como o cleanup é rápido (apenas release de hardware), não há risco de leak.
+        scope.launch {
+            try {
+                mutex.withLock {
+                    runCatching { vibrator.cancel() }
+                    toneGenerator?.let {
+                        runCatching { it.stopTone() }
+                        runCatching { it.release() }
+                        toneGenerator = null
+                    }
+                    fallbackRingtone?.let {
+                        runCatching { it.stop() }
+                        fallbackRingtone = null
+                    }
+                }
+            } finally {
+                scope.cancel()
+            }
+        }
+    }
+
 
     private fun resolveVibrator(): Vibrator =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

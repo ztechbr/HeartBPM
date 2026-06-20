@@ -121,7 +121,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onStop() {
         super.onStop()
-        alarmController.stop()
+        // O AlarmLifecycleObserver já cuida de parar o alarme no onStop
     }
 
     override fun onDestroy() {

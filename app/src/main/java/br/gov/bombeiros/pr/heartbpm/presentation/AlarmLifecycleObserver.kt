@@ -38,6 +38,8 @@ class AlarmLifecycleObserver(
 
     override fun onStop(owner: LifecycleOwner) {
         collectJob?.cancel()
-        alarmController.stop()
+        lifecycle.coroutineScope.launch {
+            alarmController.stop()
+        }
     }
 }
