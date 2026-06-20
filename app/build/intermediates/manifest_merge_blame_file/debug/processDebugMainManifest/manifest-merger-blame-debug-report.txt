@@ -72,148 +72,149 @@
 45-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:32:9-41
 46        android:supportsRtl="true"
 46-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:33:9-35
-47        android:theme="@android:style/Theme.DeviceDefault" >
-47-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:34:9-59
-48        <uses-library
-48-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:36:9-38:39
-49            android:name="com.google.android.wearable"
-49-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:37:13-55
-50            android:required="true" />
-50-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:38:13-36
-51
-52        <!-- Não depende de app companion no celular -->
-53        <meta-data
-53-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:41:9-43:36
-54            android:name="com.google.android.wearable.standalone"
-54-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:42:13-66
-55            android:value="true" />
-55-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:43:13-33
-56
-57        <activity
-57-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:45:9-54:20
-58            android:name="br.gov.bombeiros.pr.heartbpm.presentation.MainActivity"
-58-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:46:13-54
-59            android:exported="true"
-59-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:47:13-36
-60            android:taskAffinity=""
-60-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:48:13-36
-61            android:theme="@style/MainActivityTheme.Starting" >
-61-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:49:13-62
-62            <intent-filter>
-62-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:50:13-53:29
-63                <action android:name="android.intent.action.MAIN" />
-63-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:51:17-69
-63-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:51:25-66
-64
-65                <category android:name="android.intent.category.LAUNCHER" />
-65-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:52:17-77
-65-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:52:27-74
-66            </intent-filter>
-67        </activity>
-68
-69        <uses-library
-69-->[androidx.wear.compose:compose-foundation:1.6.2] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/274493a63933c33f385eff9ebdd5b88d/transformed/compose-foundation-1.6.2/AndroidManifest.xml:23:9-25:40
-70            android:name="wear-sdk"
-70-->[androidx.wear.compose:compose-foundation:1.6.2] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/274493a63933c33f385eff9ebdd5b88d/transformed/compose-foundation-1.6.2/AndroidManifest.xml:24:13-36
-71            android:required="false" />
-71-->[androidx.wear.compose:compose-foundation:1.6.2] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/274493a63933c33f385eff9ebdd5b88d/transformed/compose-foundation-1.6.2/AndroidManifest.xml:25:13-37
-72
-73        <activity
-73-->[com.google.android.gms:play-services-base:18.5.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/c49c5f716a2ac532baa13e2b0ebcf7f8/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
-74            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-74-->[com.google.android.gms:play-services-base:18.5.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/c49c5f716a2ac532baa13e2b0ebcf7f8/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
-75            android:exported="false"
-75-->[com.google.android.gms:play-services-base:18.5.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/c49c5f716a2ac532baa13e2b0ebcf7f8/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
-76            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-76-->[com.google.android.gms:play-services-base:18.5.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/c49c5f716a2ac532baa13e2b0ebcf7f8/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
-77
-78        <meta-data
-78-->[com.google.android.gms:play-services-basement:18.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/1fa1e0e52d34b3a941fa84acb6fe3503/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
-79            android:name="com.google.android.gms.version"
-79-->[com.google.android.gms:play-services-basement:18.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/1fa1e0e52d34b3a941fa84acb6fe3503/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
-80            android:value="@integer/google_play_services_version" />
-80-->[com.google.android.gms:play-services-basement:18.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/1fa1e0e52d34b3a941fa84acb6fe3503/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
-81
-82        <activity
-82-->[androidx.compose.ui:ui-tooling-android:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/79bf5a71e2fa58425ec096195d9b5599/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
-83            android:name="androidx.compose.ui.tooling.PreviewActivity"
-83-->[androidx.compose.ui:ui-tooling-android:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/79bf5a71e2fa58425ec096195d9b5599/transformed/ui-tooling/AndroidManifest.xml:24:13-71
-84            android:exported="true" />
-84-->[androidx.compose.ui:ui-tooling-android:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/79bf5a71e2fa58425ec096195d9b5599/transformed/ui-tooling/AndroidManifest.xml:25:13-36
-85        <activity
-85-->[androidx.compose.ui:ui-test-manifest:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b04503c1a6d53cba717c8c2b74de347d/transformed/ui-test-manifest-1.9.0/AndroidManifest.xml:23:9-26:79
-86            android:name="androidx.activity.ComponentActivity"
-86-->[androidx.compose.ui:ui-test-manifest:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b04503c1a6d53cba717c8c2b74de347d/transformed/ui-test-manifest-1.9.0/AndroidManifest.xml:24:13-63
-87            android:exported="true"
-87-->[androidx.compose.ui:ui-test-manifest:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b04503c1a6d53cba717c8c2b74de347d/transformed/ui-test-manifest-1.9.0/AndroidManifest.xml:25:13-36
-88            android:theme="@android:style/Theme.Material.Light.NoActionBar" />
-88-->[androidx.compose.ui:ui-test-manifest:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b04503c1a6d53cba717c8c2b74de347d/transformed/ui-test-manifest-1.9.0/AndroidManifest.xml:26:13-76
-89
-90        <provider
-90-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
-91            android:name="androidx.startup.InitializationProvider"
-91-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
-92            android:authorities="br.gov.bombeiros.pr.heartbpm.androidx-startup"
-92-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
-93            android:exported="false" >
-93-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
-94            <meta-data
-94-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
-95                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-95-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
-96                android:value="androidx.startup" />
-96-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
-97            <meta-data
-97-->[androidx.lifecycle:lifecycle-process:2.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/08cba1a53dc442975a7e232a87513a41/transformed/lifecycle-process-2.9.0/AndroidManifest.xml:29:13-31:52
-98                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-98-->[androidx.lifecycle:lifecycle-process:2.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/08cba1a53dc442975a7e232a87513a41/transformed/lifecycle-process-2.9.0/AndroidManifest.xml:30:17-78
-99                android:value="androidx.startup" />
-99-->[androidx.lifecycle:lifecycle-process:2.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/08cba1a53dc442975a7e232a87513a41/transformed/lifecycle-process-2.9.0/AndroidManifest.xml:31:17-49
-100            <meta-data
-100-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
-101                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-101-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
-102                android:value="androidx.startup" />
-102-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
-103        </provider>
-104
-105        <receiver
-105-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
-106            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-106-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
-107            android:directBootAware="false"
-107-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
-108            android:enabled="true"
-108-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
-109            android:exported="true"
-109-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
-110            android:permission="android.permission.DUMP" >
-110-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
-111            <intent-filter>
-111-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
-112                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-112-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
-112-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
-113            </intent-filter>
-114            <intent-filter>
-114-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
-115                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-115-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
-115-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
-116            </intent-filter>
-117            <intent-filter>
-117-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
-118                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-118-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
-118-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
-119            </intent-filter>
-120            <intent-filter>
-120-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
-121                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-121-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
-121-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
-122            </intent-filter>
-123        </receiver>
-124    </application>
-125
-126</manifest>
+47        android:testOnly="true"
+48        android:theme="@android:style/Theme.DeviceDefault" >
+48-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:34:9-59
+49        <uses-library
+49-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:36:9-38:39
+50            android:name="com.google.android.wearable"
+50-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:37:13-55
+51            android:required="true" />
+51-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:38:13-36
+52
+53        <!-- Não depende de app companion no celular -->
+54        <meta-data
+54-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:41:9-43:36
+55            android:name="com.google.android.wearable.standalone"
+55-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:42:13-66
+56            android:value="true" />
+56-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:43:13-33
+57
+58        <activity
+58-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:45:9-54:20
+59            android:name="br.gov.bombeiros.pr.heartbpm.presentation.MainActivity"
+59-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:46:13-54
+60            android:exported="true"
+60-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:47:13-36
+61            android:taskAffinity=""
+61-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:48:13-36
+62            android:theme="@style/MainActivityTheme.Starting" >
+62-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:49:13-62
+63            <intent-filter>
+63-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:50:13-53:29
+64                <action android:name="android.intent.action.MAIN" />
+64-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:51:17-69
+64-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:51:25-66
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+66-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:52:17-77
+66-->/Users/rodrigozaroni/Documents/HeartBPM/app/src/main/AndroidManifest.xml:52:27-74
+67            </intent-filter>
+68        </activity>
+69
+70        <uses-library
+70-->[androidx.wear.compose:compose-foundation:1.6.2] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/274493a63933c33f385eff9ebdd5b88d/transformed/compose-foundation-1.6.2/AndroidManifest.xml:23:9-25:40
+71            android:name="wear-sdk"
+71-->[androidx.wear.compose:compose-foundation:1.6.2] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/274493a63933c33f385eff9ebdd5b88d/transformed/compose-foundation-1.6.2/AndroidManifest.xml:24:13-36
+72            android:required="false" />
+72-->[androidx.wear.compose:compose-foundation:1.6.2] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/274493a63933c33f385eff9ebdd5b88d/transformed/compose-foundation-1.6.2/AndroidManifest.xml:25:13-37
+73
+74        <activity
+74-->[com.google.android.gms:play-services-base:18.5.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/c49c5f716a2ac532baa13e2b0ebcf7f8/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+75            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+75-->[com.google.android.gms:play-services-base:18.5.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/c49c5f716a2ac532baa13e2b0ebcf7f8/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+76            android:exported="false"
+76-->[com.google.android.gms:play-services-base:18.5.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/c49c5f716a2ac532baa13e2b0ebcf7f8/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+77            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+77-->[com.google.android.gms:play-services-base:18.5.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/c49c5f716a2ac532baa13e2b0ebcf7f8/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+78
+79        <meta-data
+79-->[com.google.android.gms:play-services-basement:18.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/1fa1e0e52d34b3a941fa84acb6fe3503/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+80            android:name="com.google.android.gms.version"
+80-->[com.google.android.gms:play-services-basement:18.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/1fa1e0e52d34b3a941fa84acb6fe3503/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+81            android:value="@integer/google_play_services_version" />
+81-->[com.google.android.gms:play-services-basement:18.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/1fa1e0e52d34b3a941fa84acb6fe3503/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+82
+83        <activity
+83-->[androidx.compose.ui:ui-tooling-android:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/79bf5a71e2fa58425ec096195d9b5599/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
+84            android:name="androidx.compose.ui.tooling.PreviewActivity"
+84-->[androidx.compose.ui:ui-tooling-android:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/79bf5a71e2fa58425ec096195d9b5599/transformed/ui-tooling/AndroidManifest.xml:24:13-71
+85            android:exported="true" />
+85-->[androidx.compose.ui:ui-tooling-android:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/79bf5a71e2fa58425ec096195d9b5599/transformed/ui-tooling/AndroidManifest.xml:25:13-36
+86        <activity
+86-->[androidx.compose.ui:ui-test-manifest:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b04503c1a6d53cba717c8c2b74de347d/transformed/ui-test-manifest-1.9.0/AndroidManifest.xml:23:9-26:79
+87            android:name="androidx.activity.ComponentActivity"
+87-->[androidx.compose.ui:ui-test-manifest:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b04503c1a6d53cba717c8c2b74de347d/transformed/ui-test-manifest-1.9.0/AndroidManifest.xml:24:13-63
+88            android:exported="true"
+88-->[androidx.compose.ui:ui-test-manifest:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b04503c1a6d53cba717c8c2b74de347d/transformed/ui-test-manifest-1.9.0/AndroidManifest.xml:25:13-36
+89            android:theme="@android:style/Theme.Material.Light.NoActionBar" />
+89-->[androidx.compose.ui:ui-test-manifest:1.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b04503c1a6d53cba717c8c2b74de347d/transformed/ui-test-manifest-1.9.0/AndroidManifest.xml:26:13-76
+90
+91        <provider
+91-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+92            android:name="androidx.startup.InitializationProvider"
+92-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+93            android:authorities="br.gov.bombeiros.pr.heartbpm.androidx-startup"
+93-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+94            android:exported="false" >
+94-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+95            <meta-data
+95-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+96                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+96-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+97                android:value="androidx.startup" />
+97-->[androidx.emoji2:emoji2:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/b85bfbf567d0f89b349c027c6670e32f/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+98            <meta-data
+98-->[androidx.lifecycle:lifecycle-process:2.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/08cba1a53dc442975a7e232a87513a41/transformed/lifecycle-process-2.9.0/AndroidManifest.xml:29:13-31:52
+99                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+99-->[androidx.lifecycle:lifecycle-process:2.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/08cba1a53dc442975a7e232a87513a41/transformed/lifecycle-process-2.9.0/AndroidManifest.xml:30:17-78
+100                android:value="androidx.startup" />
+100-->[androidx.lifecycle:lifecycle-process:2.9.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/08cba1a53dc442975a7e232a87513a41/transformed/lifecycle-process-2.9.0/AndroidManifest.xml:31:17-49
+101            <meta-data
+101-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+102                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+102-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+103                android:value="androidx.startup" />
+103-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+104        </provider>
+105
+106        <receiver
+106-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+107            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+107-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+108            android:directBootAware="false"
+108-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+109            android:enabled="true"
+109-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+110            android:exported="true"
+110-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+111            android:permission="android.permission.DUMP" >
+111-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+112            <intent-filter>
+112-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+113                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+113-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+113-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+114            </intent-filter>
+115            <intent-filter>
+115-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+116                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+117            </intent-filter>
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+119                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+122                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/rodrigozaroni/.gradle/caches/8.9/transforms/3e8844b198fb687fb6bca44f8fc3cdb6/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+123            </intent-filter>
+124        </receiver>
+125    </application>
+126
+127</manifest>
